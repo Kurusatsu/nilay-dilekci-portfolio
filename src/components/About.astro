@@ -1,0 +1,23 @@
+---
+import type { Lang } from '../i18n/ui';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = t(lang);
+---
+
+<section id="about" class="section-pad py-24 lg:py-32">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <div class="lg:col-span-4 reveal">
+      <p class="eyebrow">{copy.about.eyebrow}</p>
+      <h2 class="display mt-4 text-4xl sm:text-5xl lg:text-6xl">{copy.about.title}</h2>
+    </div>
+    <div class="lg:col-span-8 space-y-5 text-lg leading-relaxed text-ink-soft reveal" style="transition-delay:120ms">
+      {copy.about.body.map((p) => <p>{p}</p>)}
+    </div>
+  </div>
+</section>

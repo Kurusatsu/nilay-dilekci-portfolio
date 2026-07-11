@@ -1,0 +1,64 @@
+---
+import type { Lang } from '../i18n/ui';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = t(lang);
+---
+
+<section id="skills" class="section-pad py-24 lg:py-28 border-y border-ink/8 bg-paper-lift/60">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow">{copy.skills.eyebrow}</p>
+      <h2 class="display mt-4 text-4xl sm:text-5xl">{copy.skills.title}</h2>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      {
+        copy.skills.items.map((item, i) => (
+          <div class="reveal" style={`transition-delay:${i * 80}ms`}>
+            <div class="font-display text-sm text-signal mb-3">0{i + 1}</div>
+            <h3 class="font-display text-xl font-bold tracking-tight">{item.title}</h3>
+            <p class="mt-2 text-sm text-ink-mute leading-relaxed">{item.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 grid lg:grid-cols-3 gap-10 reveal">
+      <div>
+        <p class="eyebrow">{copy.skills.toolsLabel}</p>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {
+            copy.skills.tools.map((tool) => (
+              <li class="rounded-full border border-ink/15 px-3 py-1 text-sm text-ink-soft">{tool}</li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">{copy.skills.educationLabel}</p>
+        <p class="mt-4 font-display text-xl font-bold">{copy.skills.education.school}</p>
+        <p class="text-ink-soft">{copy.skills.education.program}</p>
+        <p class="text-sm text-ink-mute mt-1">{copy.skills.education.status}</p>
+      </div>
+      <div>
+        <p class="eyebrow">{copy.skills.experienceLabel}</p>
+        <ul class="mt-4 space-y-4">
+          {
+            copy.skills.experience.map((exp) => (
+              <li>
+                <p class="font-medium text-ink">{exp.org}</p>
+                <p class="text-sm text-ink-mute">{exp.role}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

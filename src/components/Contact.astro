@@ -1,0 +1,89 @@
+---
+import type { Lang } from '../i18n/ui';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = t(lang);
+
+const channels = [
+  {
+    label: copy.contact.emailLabel,
+    value: copy.contact.email,
+    href: `mailto:${copy.contact.email}`,
+    external: false,
+  },
+  {
+    label: copy.contact.phoneLabel,
+    value: copy.contact.phone,
+    href: `tel:+90${copy.contact.phone.replace(/\s/g, '').slice(1)}`,
+    external: false,
+  },
+  {
+    label: copy.contact.linkedinLabel,
+    value: copy.contact.linkedin,
+    href: copy.contact.linkedinUrl,
+    external: true,
+  },
+] as const;
+---
+
+<section id="contact" class="section-pad py-24 lg:py-32 border-t border-ink/8">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal max-w-3xl">
+      <p class="eyebrow">{copy.contact.eyebrow}</p>
+      <h2 class="display mt-4 text-4xl sm:text-6xl lg:text-7xl">{copy.contact.title}</h2>
+      <p class="mt-5 max-w-xl text-ink-mute text-lg leading-relaxed">{copy.contact.body}</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-7 reveal">
+        <p class="font-display text-sm uppercase tracking-[0.22em] text-ink-mute mb-6">
+          {copy.contact.reachLabel}
+        </p>
+        <ul class="divide-y divide-ink/10 border-y border-ink/10">
+          {
+            channels.map((channel) => (
+              <li>
+                <a
+                  href={channel.href}
+                  class="group flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-6 py-5 hover:text-signal transition-colors"
+                  target={channel.external ? '_blank' : undefined}
+                  rel={channel.external ? 'noopener noreferrer' : undefined}
+                >
+                  <span class="text-sm text-ink-mute group-hover:text-signal/80">{channel.label}</span>
+                  <span class="font-display text-xl sm:text-2xl font-bold tracking-tight inline-flex items-center gap-2">
+                    {channel.value}
+                    {channel.external && <span aria-hidden="true">↗</span>}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <aside id="cv" class="lg:col-span-5 reveal" style="transition-delay:100ms">
+        <div class="h-full border border-ink/10 bg-paper-lift/80 px-6 py-8 sm:px-8 flex flex-col justify-between gap-8">
+          <div>
+            <p class="eyebrow">{copy.contact.cvTitle}</p>
+            <p class="mt-4 font-display text-2xl sm:text-3xl font-bold tracking-tight leading-tight">
+              {copy.contact.cvBody}
+            </p>
+          </div>
+          <a
+            href={copy.contact.cvHref}
+            download
+            class="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper-lift hover:bg-signal transition-colors"
+          >
+            {copy.contact.cvCta}
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
