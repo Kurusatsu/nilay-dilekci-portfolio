@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../i18n/ui';
-import { t } from '../i18n/ui';
+import { t, assetPath } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
@@ -75,7 +75,7 @@ const channels = [
             </p>
           </div>
           <a
-            href={copy.contact.cvHref}
+            href={assetPath(copy.contact.cvHref)}
             download
             class="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper-lift hover:bg-signal transition-colors"
           >

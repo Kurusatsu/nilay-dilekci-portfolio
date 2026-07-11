@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import { projects } from '../../../data/projects';
 import type { Lang } from '../../../i18n/ui';
 import { t } from '../../../i18n/ui';
+import { withBase } from '../../../lib/paths';
 
 export function getStaticPaths() {
   const langs: Lang[] = ['tr', 'en'];
@@ -16,7 +17,7 @@ export function getStaticPaths() {
   );
 }
 
-const { lang, id } = Astro.params;
+const { lang } = Astro.params;
 const locale = (lang === 'en' ? 'en' : 'tr') as Lang;
 const { project } = Astro.props;
 const copy = t(locale);
@@ -29,7 +30,7 @@ const categoryLabel = copy.work.categories[project.category];
   <Header lang={locale} />
   <main class="pt-28 section-pad pb-20">
     <div class="max-w-5xl mx-auto">
-      <a href={`/${locale}/#work`} class="text-sm text-ink-mute hover:text-signal transition-colors">
+      <a href={withBase(`/${locale}/#work`)} class="text-sm text-ink-mute hover:text-signal transition-colors">
         {backLabel}
       </a>
       <p class="eyebrow mt-8">{categoryLabel}</p>
@@ -43,7 +44,7 @@ const categoryLabel = copy.work.categories[project.category];
           gallery.map((src) => (
             <div class="overflow-hidden bg-paper-deep">
               <img
-                src={src}
+                src={withBase(src)}
                 alt={project.title[locale]}
                 class="w-full h-auto object-contain"
                 loading="lazy"

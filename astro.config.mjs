@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://nilaydilekci.pages.dev',
+  site: 'https://kurusatsu.github.io',
+  base: '/nilay-dilekci-portfolio',
   integrations: [tailwind()],
   i18n: {
     defaultLocale: 'tr',
