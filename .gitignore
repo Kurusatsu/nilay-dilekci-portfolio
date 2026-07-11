@@ -7,3 +7,4 @@ dist
 public/pdf-page-*.jpg
 public/cover-full.jpg
 public/projects/p*.png
+.vercel

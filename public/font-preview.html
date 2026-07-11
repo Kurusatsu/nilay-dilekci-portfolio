@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Font önizleme — Nilay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Kumbh+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #12141a;
+        --mute: #6b7280;
+        --paper: #eceef2;
+        --signal: #d91f4a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #f6f7f9, #eceef2);
+        color: var(--ink);
+        font-family: "Kumbh Sans", sans-serif;
+        padding: 48px 24px 80px;
+      }
+      h1.page {
+        font-weight: 800;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        letter-spacing: -0.03em;
+        margin: 0 0 8px;
+      }
+      .intro { color: var(--mute); max-width: 40rem; margin-bottom: 40px; line-height: 1.5; }
+      .grid {
+        display: grid;
+        gap: 20px;
+        max-width: 1100px;
+      }
+      .card {
+        background: rgba(246, 247, 249, 0.85);
+        border: 1px solid rgba(18, 20, 26, 0.08);
+        border-radius: 18px;
+        padding: 28px 28px 24px;
+      }
+      .tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--signal);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .pair-name { font-weight: 700; margin-bottom: 18px; color: var(--mute); font-size: 0.95rem; }
+      .display {
+        font-size: clamp(2.4rem, 7vw, 4.4rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        font-weight: 800;
+        margin: 0 0 12px;
+      }
+      .sub {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+      .body {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--mute);
+        line-height: 1.55;
+        max-width: 36rem;
+        margin: 0;
+      }
+      .a .display, .a .sub, .a .body { font-family: "Kumbh Sans", sans-serif; }
+      .a .display { font-weight: 900; }
+      .b .display { font-family: "Syne", sans-serif; font-weight: 800; }
+      .b .sub, .b .body { font-family: "Kumbh Sans", sans-serif; }
+      .c .display { font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+      .c .sub, .c .body { font-family: "Kumbh Sans", sans-serif; }
+      .d .display { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; }
+      .d .sub, .d .body { font-family: "Kumbh Sans", sans-serif; }
+      .e .display { font-family: "Archivo", sans-serif; font-weight: 900; }
+      .e .sub, .e .body { font-family: "Kumbh Sans", sans-serif; }
+      .note { margin-top: 14px; font-size: 0.85rem; color: var(--mute); }
+      .pick { font-weight: 700; color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <h1 class="page">Font eşleşmeleri — Kumbh Sans + kalın display</h1>
+    <p class="intro">
+      Hepsi aynı içerikle. Hangisi “Nilay.” markasına daha çok oturuyor, söyle — siteye onu koyarız.
+      Öneri: başlıklar ExtraBold/Black, gövde Medium/SemiBold.
+    </p>
+
+    <div class="grid">
+      <article class="card a">
+        <div class="tag">Seçenek A · Tek aile</div>
+        <div class="pair-name">Kumbh Sans Black + Kumbh Sans Medium</div>
+        <p class="display">Nilay Dilekçi</p>
+        <p class="sub">Hikâye, ton ve görsel iletişim.</p>
+        <p class="body">Markalar için akılda kalan içerikler, kampanyalar ve tasarımlar üretiyorum.</p>
+        <p class="note"><span class="pick">En tutarlı.</span> Soft geometric, modern, her yerde aynı karakter. Kalınlık farkıyla hiyerarşi kurulur.</p>
+      </article>
+
+      <article class="card b">
+        <div class="tag">Seçenek B · Güçlü kontrast</div>
+        <div class="pair-name">Syne ExtraBold + Kumbh Sans</div>
+        <p class="display">Nilay Dilekçi</p>
+        <p class="sub">Hikâye, ton ve görsel iletişim.</p>
+        <p class="body">Markalar için akılda kalan içerikler, kampanyalar ve tasarımlar üretiyorum.</p>
+        <p class="note"><span class="pick">En “creative agency”.</span> Syne daha ekspresif; Kumbh gövdeyi yumuşatır. Mevcut siteye en yakın yükseltme.</p>
+      </article>
+
+      <article class="card c">
+        <div class="tag">Seçenek C · Temiz geometric</div>
+        <div class="pair-name">Space Grotesk Bold + Kumbh Sans</div>
+        <p class="display">Nilay Dilekçi</p>
+        <p class="sub">Hikâye, ton ve görsel iletişim.</p>
+        <p class="body">Markalar için akılda kalan içerikler, kampanyalar ve tasarımlar üretiyorum.</p>
+        <p class="note"><span class="pick">Net ve çağdaş.</span> Tech/design staj portfolyosu için çok dengeli; Kumbh’tan biraz daha köşeli.</p>
+      </article>
+
+      <article class="card d">
+        <div class="tag">Seçenek D · Karakterli</div>
+        <div class="pair-name">Bricolage Grotesque ExtraBold + Kumbh Sans</div>
+        <p class="display">Nilay Dilekçi</p>
+        <p class="sub">Hikâye, ton ve görsel iletişim.</p>
+        <p class="body">Markalar için akılda kalan içerikler, kampanyalar ve tasarımlar üretiyorum.</p>
+        <p class="note"><span class="pick">En kişilikli.</span> Başlıklarda daha “editorial / art school” hissi; MAVA için çok uyumlu.</p>
+      </article>
+
+      <article class="card e">
+        <div class="tag">Seçenek E · Maksimum kalın</div>
+        <div class="pair-name">Archivo Black + Kumbh Sans</div>
+        <p class="display">Nilay Dilekçi</p>
+        <p class="sub">Hikâye, ton ve görsel iletişim.</p>
+        <p class="body">Markalar için akılda kalan içerikler, kampanyalar ve tasarımlar üretiyorum.</p>
+        <p class="note"><span class="pick">En heavy.</span> Poster/kampanya enerjisi; fazla baskın gelebilir ama “kalın olsun” dersen en net seçenek.</p>
+      </article>
+    </div>
+  </body>
+</html>

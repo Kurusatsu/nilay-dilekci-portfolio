@@ -41,7 +41,7 @@
   }
 
   .display {
-    @apply font-display font-bold tracking-tightest leading-[0.95];
+    @apply font-display font-black tracking-tightest leading-[0.95];
   }
 
   .reveal {

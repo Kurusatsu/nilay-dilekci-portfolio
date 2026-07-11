@@ -21,8 +21,8 @@ export default {
         mist: '#7d8696',
       },
       fontFamily: {
-        display: ['"Syne"', 'system-ui', 'sans-serif'],
-        body: ['"Outfit"', 'system-ui', 'sans-serif'],
+        display: ['"Archivo"', 'system-ui', 'sans-serif'],
+        body: ['"Kumbh Sans"', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
         tightest: '-0.04em',
